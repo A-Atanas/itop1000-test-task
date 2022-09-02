@@ -1,7 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import { fetchExchange } from './api/api';
+import { useEffect } from 'react';
 
 function App() {
+
+  useEffect(() => fetchExchange("CAD", "UAH", 3500));
+
   return (
     <div className="App">
       <header className="App-header">
