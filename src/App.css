@@ -20,7 +20,7 @@ a {
 }
 
 a:hover {
-  color: rgb(0, 136, 0);
+	color: rgb(0, 136, 0);
 }
 
 footer {
@@ -28,4 +28,92 @@ footer {
 	width: 100%;
 	justify-content: space-around;
 	font-size: 0.8em;
+}
+
+#convertersContainer {
+	width: 60%;
+}
+
+#convertersContainer > h1 {
+	margin-block-end: 2em;
+}
+
+#conversionForm {
+	display: flex;
+	justify-content: space-around;
+}
+
+#conversionForm div {
+	display: flex;
+	flex-direction: column;
+}
+
+#swapButton {
+  background-color:rgb(0, 136, 0);
+  color: white;
+  padding: 5px 1em;
+  font-size: 1em;
+  border-radius: 10%;
+  cursor: pointer;
+}
+
+#swapButton:hover {
+  background-color:rgb(0, 110, 0);
+}
+
+.converter {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 40%;
+}
+
+.converter p {
+	font-size: 1.5em;
+}
+
+select,
+input {
+	width: fit-content;
+	font-size: 1.5em;
+	font-weight: bold;
+	background-color: black;
+	color: white;
+	scrollbar-color: black;
+	scrollbar-width: thin;
+	border: none;
+	border-bottom: 1px solid #aaa;
+}
+
+select:focus-visible,
+input:focus-visible {
+	outline: none !important;
+}
+
+input {
+	margin: 1em auto 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+option:checked {
+	background-color: rgb(0, 136, 0);
+}
+
+::-webkit-scrollbar {
+	background-color: black;
+	width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #ccc;
+	border-radius: 5px;
 }

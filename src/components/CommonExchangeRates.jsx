@@ -10,6 +10,7 @@ const CommonExchangeRates = () => {
 
 	return (
 		<header>
+			<p>Currencies to UAH:</p>
 			{Object.entries(commonRates).sort((a, b) => a[0].localeCompare(b[0])).map((rate) => (
 				// Fetched currencies return in a random order, I sort them so their location doesn't change every time
 				<div key={rate[0]}>

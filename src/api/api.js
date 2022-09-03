@@ -1,7 +1,17 @@
 // API provided by exchangerate.host
-export const fetchExchange = async (from, to, amount = 1) => {
+
+export const fetchAllCurrencies = () => {
+	const response = fetch("https://api.exchangerate.host/symbols")
+		.then((response) => response.json())
+		.then(({ symbols }) => symbols)
+		.catch((error) => console.log("error", error));
+
+	return response;
+};
+
+export const fetchExchangeRate = async (from, to) => {
 	const response = await fetch(
-		`https://api.exchangerate.host/convert?from=${from}&to=${to}&amount=${amount}&places=2`
+		`https://api.exchangerate.host/convert?from=${from}&to=${to}`
 	)
 		.then((result) => result.json())
 		.then(({ info: { rate } }) => rate)
@@ -15,7 +25,7 @@ export const fetchCurrenciesToUAHRates = async (...currencies) => {
 
 	await Promise.all(
 		currencies.map((currency) =>
-			fetchExchange(currency, "UAH").then((res) => {
+			fetchExchangeRate(currency, "UAH").then((res) => {
 				resultObj[currency] = res;
 			})
 		)
